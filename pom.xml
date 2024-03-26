@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.ubluetech</groupId>
-	<artifactId>reservation</artifactId>
+	<artifactId>reservation-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>reservation</name>
+	<name>reservation-service</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>21</java.version>
@@ -145,7 +145,7 @@
 						<image>eclipse-temurin:21-jdk-alpine</image>
 					</from>
 					<to>
-						<image>docker.io/khoazamioza/reservation</image>
+						<image>docker.io/khoazamioza/reservation-service</image>
 					</to>
 				</configuration>
 			</plugin>
