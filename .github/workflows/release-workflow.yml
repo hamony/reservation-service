@@ -42,4 +42,4 @@ jobs:
       run: |
         ./mvnw clean package jib:dockerBuild -DskipTests -Djib.to.tags=${{ env.IMAGE_TAG }}
         docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
-        docker push ${{ secrets.DOCKER_USERNAME }}/reservation:${{ env.IMAGE_TAG }}
+        docker push ${{ secrets.DOCKER_USERNAME }}/reservation-service:${{ env.IMAGE_TAG }}
