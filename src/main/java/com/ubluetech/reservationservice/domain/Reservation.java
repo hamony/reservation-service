@@ -1,6 +1,7 @@
 package com.ubluetech.reservationservice.domain;
 
 import java.time.LocalDate;
+import java.util.Set;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -19,7 +20,10 @@ public class Reservation {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private Guest guest;
-    private Room room;
+
+    @OneToMany(mappedBy = "reservation")
+    private Set<Room> rooms;
+
     private LocalDate checkInDate;
     private LocalDate checkOutDate;
 }
