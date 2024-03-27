@@ -23,8 +23,7 @@ public class Reservation {
 
     @OneToMany(mappedBy = "reservation",
                cascade = CascadeType.ALL,
-               orphanRemoval = true)
-               
+               orphanRemoval = true)   
     private Set<Room> rooms;
 
     private LocalDate checkInDate;
