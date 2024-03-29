@@ -144,9 +144,6 @@
 					<from>
 						<image>eclipse-temurin:21-jdk-alpine</image>
 					</from>
-					<to>
-						<image>docker.io/khoazamioza/reservation-service</image>
-					</to>
 				</configuration>
 			</plugin>
 		</plugins>

@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: reservation-service-deployment
+  labels:
+    app: reservation-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: reservation-service
+  template:
+    metadata:
+      labels:
+        app: reservation-service
+    spec:
+      automountServiceAccountToken: false
+      containers:
+      - name: reservation-service
+        image: reservation-service:v0.1.0-alpha
+        resources:
+          limits:
+            cpu: "1"
+            memory: "1Gi"
+      
+        # readinessProbe:
+        #   httpGet:
+        #     port: 8080
+        #     path: /actuator/health/readiness
+
+        # livenessProbe:
+        #   httpGet:
+        #     port: 8080
+        #     path: /actuator/health/liveness
+
+        # lifecycle:
+        #   preStop:
+        #     exec:
+        #       command: ["sh", "-c", "sleep 10"]
+          
