@@ -18,6 +18,7 @@ spec:
       containers:
       - name: reservation-service
         image: reservation-service:v0.1.0-alpha
+        imagePullPolicy: Never # SHOULD NOT DO IT ON PRODUCTION the kubelet does not try fetching the image. If the image is somehow already present locally
         resources:
           limits:
             cpu: "1"
