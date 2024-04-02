@@ -1,6 +1,6 @@
 #!/bin/bash
 
-eval $(minikube docker-env)
+# eval $(minikube docker-env)
 # Jib google docker build with minikube
 ./mvnw com.google.cloud.tools:jib-maven-plugin:dockerBuild -Dimage=reservation-service:v0.1.0-alpha
 
