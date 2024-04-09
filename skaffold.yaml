@@ -8,6 +8,6 @@ build:
       jib:
         project: com.ubluetech:reservation-service
 manifests:
-  rawYaml:
-    - k8s/deployment.yaml
-    - k8s/service.yaml
+  kustomize:
+    paths:
+      - kustomize/base
