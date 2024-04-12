@@ -1,8 +1,10 @@
-package com.ubluetech.reservationservice.domain;
+package com.ubluetech.reservationservice.presentation;
 
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.factory.Mappers;
+
+import com.ubluetech.reservationservice.domain.Reservation;
 
 @Mapper(componentModel = "spring")
 public interface ReservationMapper {

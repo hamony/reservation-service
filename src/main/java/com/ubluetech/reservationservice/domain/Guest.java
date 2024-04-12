@@ -6,7 +6,7 @@ import lombok.Getter;
 
 @Embeddable
 @Getter
-class Guest {
+public class Guest {
     @Column(nullable = false)
     private String fullName;
     

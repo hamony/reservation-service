@@ -1,4 +1,4 @@
-package com.ubluetech.reservationservice.domain;
+package com.ubluetech.reservationservice.presentation;
 
 import java.time.LocalDate;
 
@@ -7,7 +7,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class ReservationDto {
+class ReservationDto {
     private Long reservationId;
     private String fullName;
     private String email;
