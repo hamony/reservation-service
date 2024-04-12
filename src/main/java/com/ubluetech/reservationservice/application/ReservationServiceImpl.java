@@ -1,6 +1,7 @@
 package com.ubluetech.reservationservice.application;
 
 import com.ubluetech.reservationservice.domain.Reservation;
+import com.ubluetech.reservationservice.infrastructure.ReservationRepository;
 
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;

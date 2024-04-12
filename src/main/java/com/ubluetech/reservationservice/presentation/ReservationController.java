@@ -4,12 +4,14 @@ import java.util.List;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.ubluetech.reservationservice.application.ReservationRepository;
-import com.ubluetech.reservationservice.domain.ReservationDto;
-import com.ubluetech.reservationservice.domain.ReservationMapper;
+import com.ubluetech.reservationservice.domain.RequestReservationCommand;
+import com.ubluetech.reservationservice.infrastructure.CommandHandler;
+import com.ubluetech.reservationservice.infrastructure.ReservationRepository;
 
 import lombok.RequiredArgsConstructor;
 
@@ -20,6 +22,7 @@ import lombok.RequiredArgsConstructor;
 public class ReservationController {
     private final ReservationRepository repository;
     private final ReservationMapper reservationMapper;
+    private final CommandHandler<RequestReservationCommand> commandHandler;
 
     @GetMapping
     public List<ReservationDto> getAllReservations() {
@@ -38,5 +41,10 @@ public class ReservationController {
                         .findById(id)
                         .orElse(null)
                 );
+    }
+
+    @PostMapping
+    public void createReservation(@RequestBody RequestReservationCommand command) {
+        commandHandler.handle(command);
     }
 }
